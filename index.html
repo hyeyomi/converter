@@ -43,7 +43,7 @@ function MinutesToHours(){
             disabled = {flipped === true}
             />
             </div>
-            <img src = {!flipped? "converter/free-icon-arrow-8066251.png" : "converter/free-icon-up-arrow-8066269.png"}/>
+            <img src = {!flipped? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
             <div id="hours">
             <label for = "hours">   Hours </label>
             <input value={flipped? minutes : Math.round(minutes/60)}
@@ -87,7 +87,7 @@ function KmToMiles(){
             id = "Km"
             type = "number"/>
         </div>
-        <img src={!flip? "/free-icon-arrow-8066251.png" : "/free-icon-up-arrow-8066269.png"}/>
+        <img src={!flip? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
         <div>
             <label for="Miles">Miles </label>
             <input 
