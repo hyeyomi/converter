@@ -43,7 +43,7 @@ function MinutesToHours(){
             disabled = {flipped === true}
             />
             </div>
-            <img src = {!flipped? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
+            <img id="img1" src = {!flipped? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
             <div id="hours">
             <label for = "hours">   Hours </label>
             <input value={flipped? minutes : Math.round(minutes/60)}
@@ -87,8 +87,8 @@ function KmToMiles(){
             id = "Km"
             type = "number"/>
         </div>
-        <img src={!flip? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
-        <div>
+        <img id="img2" src={!flip? "/converter/free-icon-arrow-8066251.png" : "/converter/free-icon-up-arrow-8066269.png"}/>
+        <div id="mile">
             <label for="Miles">Miles </label>
             <input 
             value = {flip? Math.round(amount/1.609344) : amount} 
@@ -110,9 +110,10 @@ function App(){
     const [index, setIndex] = React.useState("x");
     const onSelect = (event) => {
         setIndex(event.target.value);
+    
 }
     return(
-        <div>
+        <div class="container">
             <h1>Super Converter</h1>
             <select value={index} onChange={onSelect}>
                 <option value="x">Select your units!</option>
@@ -121,7 +122,7 @@ function App(){
             </select>
             <hr/>
             <div>
-            {index === "x" ? "Please select your units" : null}
+            
             {index === "0" ? <MinutesToHours /> : null}
             {index === "1" ? <KmToMiles /> : null}
             </div>
